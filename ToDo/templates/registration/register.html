@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Registrar no Projeto{% endblock %}
+
+{% block content %}
+{% include '_Header.html' %}
+<div class="list-div-form">
+<div class="login">
+    <h1 class="masthead-heading text-uppercase mb-0 text-center">REGISTER</h1>
+    <div class="Card">
+        <div class="card auth-card">
+            <div class="card-body">
+                <h4 class="card-title text-center">
+                    <form class="log" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        {{ form|bootstrap}}
+                        <button type="submit" class=" button btn btn-primary btn-block">Registrar</button>               
+                    </form>
+                    <p class="change-form-p">Já possui uma conta? <a href="/accounts/login">Clique Aqui!</a></p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

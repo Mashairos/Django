@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Tarefas {% endblock %}
+
+{% block content %}
+<h1 class="masthead-heading text-uppercase mb-0 text-center tit">{{task.title}}</h1>
+<div class="viewtask">
+    <p> Descrição: {{task.description}}</p>
+    <p> Status: {{task.done}}</p>
+    <p> User: {{task.user}}</p>
+    <p> Criada em: {{task.create_at}}</p>
+    <p> Editada em:{{task.update_at}}</p>
+</div>
+{% endblock %}

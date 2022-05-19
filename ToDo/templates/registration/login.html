@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+
+{% block title %}Entrar no Projeto{% endblock %}
+
+{% block content %}
+{% include '_Header.html' %}
+<div class="list-div-form">
+<div class="login">
+    <h1 class="masthead-heading text-uppercase mb-0 text-center">LOGIN</h1>
+    <div class="Card">
+        <div class="card auth-card">
+            <div class="card-body">
+                <h4 class="card-title text-center">
+                    <form class="log" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        {{ form|bootstrap}}
+                        <button type="submit" class=" button btn btn-primary btn-block">Entrar</button>               
+                    </form>
+                    <p class="change-form-p">Quer criar uma conta? <a href="/accounts/register">Clique Aqui!</a></p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
